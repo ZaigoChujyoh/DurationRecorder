@@ -13,7 +13,7 @@ function time_record_one_sample(){
 	fps = Stack.getFrameRate();
 	
 	time_former = 0;
-	flag_data = 0;
+	flag_file = 0;
 	for(i = 0; i < column.length; i++){
 		flag_key = 1;
 		while(flag_key){
@@ -29,13 +29,13 @@ function time_record_one_sample(){
 				time_former = time;
 			}
 			wait(100);
-			//shiftキーでこのサンプルの記録を終了する
+			//shiftキーでこのファイルの記録を終了する
 			if(isKeyDown("shift")){
-				flag_data = 1;
+				flag_file = 1;
 				break;
 			}
 		}
-		if(flag_data){
+		if(flag_file){
 			break;
 		}
 	}
